@@ -10,10 +10,10 @@ module.exports = (mongoose, config) => {
     // database.on('connected', () => console.log('Connected to BudgetManager database'));
     // database.on('disconnected', console.log('Disconnected from BudgetManager database'));
 
-    process.on('SIGINT', () => {
-        database.close(() => {
-            console.log('BudgetManager terminated, connection closed');
-            process.exit(0);
-        })
-    });
+    // process.on('SIGINT', () => {
+    //     database.close(() => {
+    //         console.log('BudgetManager terminated, connection closed');
+    //         process.exit(0);
+    //     })
+    // });
 };

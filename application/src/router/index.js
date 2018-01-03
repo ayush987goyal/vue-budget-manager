@@ -6,6 +6,14 @@ import * as Auth from '../components/pages/Authentication'
 import Home from '../components/pages/Home.vue'
 import Authentication from '@/components/pages/Authentication/Authentication'
 
+// Global components
+import Header from '../components/Header.vue'
+import BudgetList from '../components/Budget/BudgetList.vue'
+
+// register components
+Vue.component('app-header', Header)
+Vue.component('budget-list', BudgetList)
+
 Vue.use(Router)
 
 const router = new Router({
@@ -13,7 +21,11 @@ const router = new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home,
+      components: {
+        default: Home,
+        header: Header,
+        budgetList: BudgetList
+      },
       meta: {
         requiredAuth: true
       }
